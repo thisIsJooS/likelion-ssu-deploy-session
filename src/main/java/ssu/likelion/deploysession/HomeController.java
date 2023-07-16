@@ -1,5 +1,7 @@
 package ssu.likelion.deploysession;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,12 @@ public class HomeController {
 
     @ResponseBody
     @GetMapping("/likelion/president")
-    public String getPresident(){
-        return "서채연";
+    public ResponseEntity<PresidentInfoDto> getPresident(){
+        return new ResponseEntity<>(PresidentInfoDto.builder()
+                .name("서채연")
+                .age(21)
+                .major("Global Media")
+                .build(), HttpStatus.OK);
     }
 
 }
