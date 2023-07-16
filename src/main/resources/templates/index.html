@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            display: block;
+            margin: 0 auto;
+            width : auto;
+            height : 100vh;
+        }
+
+        .text-center {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .text-white {
+            color: #FFFFFF;
+        }
+
+        .text-large {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<img th:src="@{/img/likelion11th.jpeg}" alt="">
+<p class="text-center text-white text-large">
+    안녕하세요,
+    <span class="text-white text-large" th:text="${name}"></span>
+    님!
+</p>
+</body>
+
+</html>
