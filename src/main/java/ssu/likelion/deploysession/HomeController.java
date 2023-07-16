@@ -15,4 +15,11 @@ public class HomeController {
         model.addAttribute("name", name.orElse("아기사자"));
         return "index";
     }
+
+    @ResponseBody
+    @GetMapping("/likelion/president")
+    public String getPresident(){
+        return "서채연";
+    }
+
 }
